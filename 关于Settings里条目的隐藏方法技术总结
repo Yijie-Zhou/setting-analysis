@@ -1,0 +1,19 @@
+
+关于Settings里条目的隐藏方法技术总结：
+
+Settings里条目的隐藏，可通过布局和代码的隐藏来实现。
+
+1.先在dashboard_categories.xml中找到条目的id.
+2.通过把布局文件中隐藏条目的布局注释.
+3.在SettingsActivity.java中找到该条目的id，并注释该行.
+4.再注释该条目Activity的入口或添加代码用remove方法隐藏。
+
+例如：隐藏Security条目，布局注释后，代码实现如下。
+
+SettingsActivity.java中 :
+1.找到R.id.security
+else if (id == R.id.security_settings) {
+         removeTile = true;
+}
+
+
